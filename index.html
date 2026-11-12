@@ -3,32 +3,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Game Portal</title>
+  <title>PokeBonk</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       background: #111;
-      overflow: hidden;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    iframe {
-      width: 100vw;
-      height: 100vh;
+    button {
+      padding: 20px 45px;
+      font-size: 25px;
+      background: #3488ff;
+      color: white;
       border: none;
+      border-radius: 12px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://pokebonk.com"
-    allow="fullscreen"
-    title="Classroom">
-  </iframe>
+  <button onclick="window.location.href='https://pokebonk.com'">
+    PLAY POKEBONK
+  </button>
 </body>
 </html>
