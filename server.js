@@ -8,20 +8,33 @@ const TARGET = process.env.TARGET || "https://pokebonk.com";
 
 app.get("/health", (req, res) => res.send("Server is running!"));
 
-// Your launcher page now lives here
 app.get("/launcher", (req, res) =>
   res.sendFile(path.join(__dirname, "index.html"))
 );
 
-// Everything else is forwarded to the target site
 app.use(
   "/",
   createProxyMiddleware({
     target: TARGET,
     changeOrigin: true,
     ws: true,
-    autoRewrite: true,
     cookieDomainRewrite: "",
+    on: {
+      proxyRes: (proxyRes, req) => {
+        console.log(
+          req.method, req.url, "->", proxyRes.statusCode,
+          proxyRes.headers.location || "",
+          proxyRes.headers["server"] || ""
+        );
+      },
+      error: (err, req, res) => {
+        console.log("PROXY ERROR:", req.url, err.message);
+        if (res.writeHead) {
+          res.writeHead(502);
+          res.end("Proxy error: " + err.message);
+        }
+      },
+    },
   })
 );
 
