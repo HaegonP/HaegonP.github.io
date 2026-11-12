@@ -1,30 +1,86 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PokeBonk Embedded</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PokeBonk Launcher</title>
+
   <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #111;
+    * {
+      box-sizing: border-box;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    body {
+      margin: 0;
+      background: #10131c;
+      color: white;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .launcher {
+      text-align: center;
+      width: 90%;
+      max-width: 650px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    p {
+      color: #aab3c5;
+    }
+
+    button {
+      background: #397df5;
+      color: white;
+      border: 0;
+      border-radius: 12px;
+      padding: 16px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #2463d4;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #8b98ae;
     }
   </style>
 </head>
+
 <body>
-  <iframe
-    src="https://pokebonk.com"
-    allow="fullscreen"
-    allowfullscreen>
-  </iframe>
+  <main class="launcher">
+    <h1>PokéBonk</h1>
+    <p>Your game launcher</p>
+
+    <button onclick="launchGame()">
+      PLAY GAME
+    </button>
+
+    <div class="status" id="status">
+      Ready to launch
+    </div>
+  </main>
+
+  <script>
+    function launchGame() {
+      document.getElementById("status").textContent =
+        "Opening PokéBonk...";
+
+      window.location.href = "https://pokebonk.com";
+    }
+  </script>
 </body>
 </html>
 
