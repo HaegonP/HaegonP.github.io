@@ -18,9 +18,9 @@ app.use(
   "/",
   createProxyMiddleware({
     target: TARGET,
-    changeOrigin: true,   // sets Host header to the target's
-    ws: true,             // proxy websockets (games often need these)
-    autoRewrite: true,    // rewrites redirect Location headers to your host
+    changeOrigin: true,
+    ws: true,
+    autoRewrite: true,
     cookieDomainRewrite: "",
   })
 );
