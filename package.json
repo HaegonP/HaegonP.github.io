@@ -1,0 +1,13 @@
+
+{
+  "name": "pokebonk-project",
+  "version": "1.0.0",
+  "description": "Game website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
