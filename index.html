@@ -7,80 +7,55 @@
   <title>PokeBonk Launcher</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       background: #10131c;
       color: white;
       font-family: Arial, sans-serif;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .launcher {
       text-align: center;
-      width: 90%;
-      max-width: 650px;
     }
 
     h1 {
-      font-size: 42px;
-    }
-
-    p {
-      color: #aab3c5;
+      font-size: 48px;
     }
 
     button {
+      padding: 18px 55px;
       background: #397df5;
-      color: white;
-      border: 0;
+      border: none;
       border-radius: 12px;
-      padding: 16px 30px;
-      font-size: 18px;
+      color: white;
+      font-size: 22px;
       cursor: pointer;
-      margin-top: 20px;
     }
 
     button:hover {
       background: #2463d4;
     }
-
-    .status {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #8b98ae;
-    }
   </style>
 </head>
 
 <body>
-  <main class="launcher">
-    <h1>PokéBonk</h1>
-    <p>Your game launcher</p>
+  <div class="launcher">
+    <h1>POKEBONK</h1>
+    <p>Ready to play?</p>
 
     <button onclick="launchGame()">
-      PLAY GAME
+      PLAY
     </button>
-
-    <div class="status" id="status">
-      Ready to launch
-    </div>
-  </main>
+  </div>
 
   <script>
     function launchGame() {
-      document.getElementById("status").textContent =
-        "Opening PokéBonk...";
-
-      window.location.href = "https://pokebonk.com";
+      window.location.assign("https://pokebonk.com");
     }
   </script>
 </body>
 </html>
-
